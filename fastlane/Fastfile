@@ -17,7 +17,9 @@ default_platform(:ios)
 
 platform :ios do
   desc "Description of what the lane does"
-  lane :custom_lane do
+  lane :build do
+    increment_build_number
+
     # add actions here: https://docs.fastlane.tools/actions
     build_ios_app(
       output_directory: "build",
@@ -26,13 +28,26 @@ platform :ios do
     )
   end
 
-  lane :upload do
+  lane :ac_upload do
     appcenter_upload(
-      owner_name: "evkhramk",
-      app_name: "ios-native-appcenter-demo",
+      owner_name: ENV["AC_OWNER"],
+      app_name: ENV["AC_APP"],
       ipa: "./build/app.ipa",
-      group: "Collaborators",
-      mandatory_update: true
+      dsym: "./build/app.app.dSYM.zip",
+      group: "Collaborators,Test",
+      mandatory_update: true,
+      notify_testers: false
+    )
+  end
+
+  lane :sxs_upload do
+    appcenter_upload(
+      owner_name: ENV["HA_OWNER"],
+      app_name: ENV["HA_APP"],
+      ipa: "./build/app.ipa",
+      group: "Collaborators,All-users-of-ios-native-fastlane-demo",
+      mandatory_update: true,
+      notify_testers: true
     )
   end
 end

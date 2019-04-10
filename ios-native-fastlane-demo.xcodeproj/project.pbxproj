@@ -437,6 +437,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = R2L8TU8NEV;
 				INFOPLIST_FILE = "ios-native-fastlane-demo/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -448,6 +449,7 @@
 				PROVISIONING_PROFILE_SPECIFIER = "fastlane-demo";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
 		};
@@ -456,6 +458,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = R2L8TU8NEV;
 				INFOPLIST_FILE = "ios-native-fastlane-demo/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -467,6 +470,7 @@
 				PROVISIONING_PROFILE_SPECIFIER = "fastlane-demo";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
 		};
