@@ -8,6 +8,9 @@
 
 import UIKit
 import CoreData
+import HockeySDK
+
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,8 +19,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+
+        BITHockeyManager.shared().configure(withIdentifier: "2e9b0795e7404cc9bec065f93adee710")
+        BITHockeyManager.shared().authenticator.identificationType = BITAuthenticatorIdentificationType.device
+        BITHockeyManager.shared().start()
+        BITHockeyManager.shared().authenticator.authenticateInstallation()
+        
         return true
+    }
+    
+    func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
+        if (BITHockeyManager.shared().authenticator.handleOpen(url, sourceApplication: sourceApplication, annotation: annotation)) {
+            return true
+        }
+        /* Your own custom URL handlers */
+        return false;
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
