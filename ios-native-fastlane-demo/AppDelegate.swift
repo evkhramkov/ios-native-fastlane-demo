@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
-        BITHockeyManager.shared().configure(withIdentifier: "2e9b0795e7404cc9bec065f93adee710")
+        BITHockeyManager.shared().configure(withIdentifier: "dcd8db0d0e0f4a98a7a37a1dbc6469fd")
         BITHockeyManager.shared().authenticator.identificationType = BITAuthenticatorIdentificationType.device
         BITHockeyManager.shared().start()
         BITHockeyManager.shared().authenticator.authenticateInstallation()

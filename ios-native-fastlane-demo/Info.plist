@@ -25,7 +25,8 @@
 			<string>com.evkhramk.fastlane-demo</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>ha2e9b0795e7404cc9bec065f93adee710</string>
+				<string>ha</string>
+				<string>dcd8db0d0e0f4a98a7a37a1dbc6469fd</string>
 			</array>
 		</dict>
 	</array>
